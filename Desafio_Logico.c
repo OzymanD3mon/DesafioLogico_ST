@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 struct Carta {
     char estado[50];
@@ -15,11 +16,11 @@ struct Carta cadastrarCarta() {
 
     printf("\n=== Cadastro de Carta ===\n");
     printf("Digite o Estado: ");
-    scanf(" %s[^\n]", c.estado);  
+    scanf(" %[^\n]", c.estado);  // lê string com espaço
     printf("Digite o Código da Carta: ");
-    scanf(" %d[^\n]", c.codigo);
+    scanf(" %[^\n]", c.codigo);
     printf("Digite o Nome da Cidade: ");
-    scanf(" %s[^\n]", c.cidade);
+    scanf(" %[^\n]", c.cidade);
     printf("Digite a População: ");
     scanf("%d", &c.populacao);
     printf("Digite a Área (km²): ");
@@ -66,5 +67,5 @@ int main() {
         printf("Empate! As duas cidades têm a mesma população.\n");
     }
 
-    
+    return 0;
 }
